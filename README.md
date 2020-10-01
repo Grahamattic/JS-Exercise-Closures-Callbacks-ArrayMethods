@@ -42,6 +42,9 @@ Find the file `index.js` and complete the tasks until your tests are passing.
 Edit the `ReadMe` file with your answers.
 
 1. In your own words, define closure (1-2 sentences).
+
+        Closure is the combination of a function and the variables it uses within its scope (its lexical environment). It gives you access to an outer function’s scope from an inner function.
+
 2. Study the following code, then answer the questions below.
 
 ```js
