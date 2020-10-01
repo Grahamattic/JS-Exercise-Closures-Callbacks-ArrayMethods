@@ -66,8 +66,18 @@ dansRoll();
 ```
 
 a. Where is closure used in this code? How can you tell?
+
+    Closure is used in the anonymous function within the personalDice(name) function. I can tell because the function is
+    enclosed in another function.
+
 b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change?
-c. What is the lexical scope of `newRoll`? 
+
+    The logged string is always in the same format. The name of the dice roller could change.
+
+c. What is the lexical scope of `newRoll`?
+
+    The lexical scope of `newRoll` is the anonymous function that contains it, the personalDice(name) outer function, and
+    the global scope.
 
 ### Task 3 - Stretch Goals
 
