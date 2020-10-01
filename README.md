@@ -125,39 +125,56 @@ addSix(21); // returns 27
 
         Object-oriented languages work well with a fixed set of operations on things. The existing classes are left alone and new classes are added which implement existing methods.Functional languages work well when you have a fixed set of things and primarily add new operations on existing things as your code evolves. The existing functions are untouched, and new functions are added that compute with existing data types.
 
+        Here is a breakdown of the differences between functional and object oriented programming:
+
+            Functional Programming                                    Object Oriented Programming
+            Definition: focuses on function evaluation                Definition: focuses on the concept of objects
+            Data: uses immutable data                                 Date: uses the mutable data
+            Model: Follows a declarative programming model            Model: Follows an imperative programming model
+            Support: Supports parallel programming                    Support: Does not support parallel programming
+            Execution: Statements can be excluded in any order        Execution: Statements executed in particular order
+            Iteration: Uses recursion                                 Iteration: Uses loops
+            Basic element: Functions & variables                      Basic element: Objects & methods
+
         Some of the advantages of object-oriented programming include:
 
-            1. Improved software-development productivity: Object-oriented programming is modular, as it provides separation of duties in object-based program development. It is also extensible, as objects can be extended to include new attributes and behaviors. Objects can also be reused within an across applications. Because of
-            these three factors – modularity, extensibility, and reusability – object-oriented programming provides improved software-development productivity over traditional procedure-based programming techniques.
-
-            2. Improved software maintainability: For the reasons mentioned above, objectoriented software is also easier to maintain. Since the design is modular, part of the system can be updated in case of issues without a need to make large-scale changes.
+            1. OOP languages can offer improved software-development productivity because they are:
             
-            3. Faster development: Reuse enables faster development. Object-oriented programming languages come with rich libraries of objects, and code developed during projects is also reusable in future projects.
+                a. Modular. They povide separation of duties in object-based program development.
+                   Part of the system can be updated in case of issues without a need to make large-scale changes.
 
-            4. Lower cost of development: The reuse of software also lowers the cost of development. Typically, more effort is put into the object-oriented analysis and design, which lowers the overall cost of development.
+                b. Extensible. Objects can be extended to include new attributes and behaviors.
 
-            5. Higher-quality software: Faster development of software and lower cost of development allows more time and resources to be used in the verification of the software. Although quality is dependent upon the experience of the teams, objectoriented programming tends to result in higher-quality software.
+                c. Reusable. OOP languages provide rich object libraries and reusable code resources.
+                   Objects can be reused within and across applications. This provides faster development processes.
+                   The reuse of software also lowers development cost.
+
+            2. OOP languages also provide improved software maintainability because of the reasons presented above.
+
+            4. Typically, OOP analysis and design is frontloaded with more time and effort, which lowers the overall cost of development.
+
+            5. Faster development and lower development costs lead to higher quality software, allowing more time and resources to be used in software verification. Although quality is usually dependent upon the experience of the deveopment teams, object-oriented programming tends to result in higher-quality software even with less experienced developers.
             
             
         Some of the disadvantages of object-oriented programming include:
             
-            1. Steep learning curve: The thought process involved in object-oriented programming may not be natural for some people, and it can take time to get used to it. It is complex to create programs based on interaction of objects. Some of the key programming techniques, such as inheritance and polymorphism, can be challenging to comprehend initially.
+            1. Object-orinted programming (OOP) languages have a steep learning curve. The process of acquiring this knowledge is not always natural. Thus, learning an OOP language and its key techiniques (such as inheritance, polymorphism, closure, etc.) can be challenging and very time consuming for some people. 
 
-            2. Larger program size: Object-oriented programs typically involve more lines of code than procedural programs.
+            2. OOP languages typically require more coding than procedural programs.
 
-            3. Slower programs: Object-oriented programs are typically slower than procedurebased programs, as they typically require more instructions to be executed.
+            3. OOP programs sometimes run slower than functional programs that are procedure based, because OOP programs typically required more instructional executions.
             
-            4. Not suitable for all types of problems: There are problems that lend themselves well to functional-programming style, logic-programming style, or procedure-based programming style, and applying object-oriented programming in those situations will not result in efficient programs. 
+            4. OOP programming may not suit all problem solutions. For example, some problems are more suited to functional-programming style, logic-programming style, or procedure-based programming style. Thus, applying an OOP languge in those situations is not efficient. 
 
         Some of the pros of functional programming are:
 
-            1. Using clean and transparent functions leads to reliable results without side effects that deliver and return exactly what you expect.
+            1. If you implement dry, clean, transparent functions, you can achieve reliable results and avoid unwanted side effects. Your code can perform exactly the way you intended it.
             
-            2. It uses a more declarative style that focuses more on what needs to be done and less on how to do it, with an emphasis on efficiency and optimisation.
+            2. Functional programming implements a declarative style. It focuses primarily on what needs to be done as opposed to how to do it. It emphasizes efficiency and optimisation.
 
         Some of the cons of functional programming are: 
         
-            1. It is a relatively new paradigm and sometimes it is not so easy to find documentation or information compared to Object-oriented Programming.
+            1. It is a relatively new paradigm. Consequently, documentation or helpful information is sometimes difficult to locate.
             
             2. Sometimes it may become illegible because of multiple large number of functions.
 
