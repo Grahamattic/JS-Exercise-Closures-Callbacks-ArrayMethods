@@ -1,183 +1,121 @@
-// ⭐️ Example Challenge START ⭐️
+// ⭐️ ### Task 3 - Stretch Goals ⭐️
 
-/**
- * ### Challenge `processFirstItem`
- * 
- * @instructions
- * Implement a higher-order function called `processFirstItem`.
- * It takes two arguments:
- * @param stringList an array of strings.
- * @param callback function that takes a string as its argument.
- * @returns the result of invoking `callback` with the FIRST element in `stringList`.
- * 
- * Example of usage of this higher-order function:
- * Invoking `processFirstItem` passing `['foo', 'bar']` and `(str) => str + str`,
- * should return 'foofoo'.
+/*
+
+After you have completed the requirements, **create** a new file called `stretch.js` and practice more with closures.
+There are no tests for these problems. See if you can complete one or more of the following challenges:
+
+
+1. Predict the output of the code below and explain why this is the output using what you learned today. When you're ready
+for answers, view an explanation [here](https://www.coderbyte.com/algorithm/3-common-javascript-closure-questions
 */
+```js
+(function(){
+  var a = b = 3;
+})();
+console.log("a defined? " + (typeof a !== 'undefined'));
+console.log("b defined? " + (typeof b !== 'undefined'));
+```
 
-function processFirstItem(stringList, callback) {
-  return callback(stringList[0])
-}
+        // My predicted output: "a defined? false" and "b defined? true"
+        // Actual output: "a defined? false" and "b defined? true"
 
-// ⭐️ Example Challenge END ⭐️ //
+        // var a is undefined because when it is assigned the value of b, b has not yet been assigned a value.
+        // Then, b is assigned the value of 3, which makes it defined when b is called.
 
 
-///// M V P ///////
-
-/* Task 1: `counterMaker`
- * Study the code for counter1 and counter2. Answer the questions below.
- * 
- * 1. What is the difference between counter1 and counter2?
- 
-      //  Counter1 returns a function. It is a counter "maker". You could use this function to create
-          multiple counters. Counter2 simply returns the value of count from global scope, incremented
-          by 1.
- 
-
-/* 2. Which of the two uses a closure? How can you tell?
-
-      //  Counter1 uses a closure. It encloses a function. It returns a function, not just a value.
-
- * 
- * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better? 
- * 
- *    //  Counter1 would be preferable if we wanted to create multiple counters. Counter2 would be better if we
- *        only needed to count one thing.
- *
+/*
+2. Write a function that would allow you to do this using a closure. (This is another interview question we've seen before - when you're ready for answers, view an explanation [here](https://www.coderbyte.com/algorithm/3-common-javascript-closure-questions)).
 */
+```js
+var addSix = createBase(6);
+addSix(10); // returns 16
+addSix(21); // returns 27
+```
 
-// counter1 code
-function counterMaker() {
-  let count = 0;
-  return function counter() {
-    count++;
-  }
-}
-const counter1 = counterMaker();
-
-
-// counter2 code
-let count = 0;
-
-function counter2() {
-  return count++;
-}
-
-
-/* Task 2: inning() 
-
-Write a function called `inning` that generates a random number of points that a team scored in an inning.
-This should be a whole number between 0 and 2. */
-
-        function inning(inning){
-
-            let score = Math.floor(Math.random() * 3);
-        }
-        console.log(inning);
-
-/* Task 3: finalScore()
-
-Write a higher order function called `finalScore` that accepts the callback function `inning`
-(from above) and a number of innings and and returns the final score of the game in the form
-of an object.
-
-For example, 
-
-finalScore(inning, 9) might return: 
-{
-  "Home": 11,
-  "Away": 5,
-}
-
-*/ 
-
-        function inning(inning){
-
-          let score = Math.floor(Math.random() * 3);
-          return score;
-        }
-        console.log(inning);
-
-        function finalScore(cb,innings) {
-
-        let final = {
-          "Home": 0,
-          "Away": 0
-        }
-        for (let inn = 0; inn < innings; inn++) {
-          final.Home += inning();
-          final.Away += inning();
-        }
-        return final
-        }
-        console.log(finalScore(inning, 9));
-
-
-/* Task 4: 
-
-Create a function called `scoreboard` that accepts the following parameters: 
-
-(1) Callback function `getInningScore`
-(2) Callback function `inning`
-(2) A number of innings
-
-and returns the score at each point in the game, like so:
-
-1st inning: awayTeam - homeTeam
-2nd inning: awayTeam - homeTeam
-3rd inning: awayTeam - homeTeam
-4th inning: awayTeam - homeTeam
-5th inning: awayTeam - homeTeam
-6th inning: awayTeam - homeTeam
-7th inning: awayTeam - homeTeam
-8th inning: awayTeam - homeTeam
-9th inning: awayTeam - homeTeam
-
-Final Score: awayTeam - homeTeam */
-
-        function inning(inning){
-
-          let score = Math.floor(Math.random() * 3);
-          return score;
+        function createBase(base) {
+            return function(add) {
+                return base + add;
+            }
         }
 
-        function scoreboard(getInningScore,inning,innings) {
+        var addSix = createBase(6);
+        alert(addSix(10));
+        alert(addSix(21));
+
+
+/*
+3. Research the differences between functional programming and object oriented programming. Then,
+describe the pros and cons of functional programming vs object-oriented programming. This is a common
+interview question and great practice!
+
+
+      Object-oriented languages work well with a fixed set of operations on things. The existing classes are left alone
+      and new classes are added which implement existing methods.Functional languages work well when you have a fixed set
+      of things and primarily add new operations on existing things as your code evolves. The existing functions are
+      untouched, and new functions are added that compute with existing data types.
+
+      Here is a breakdown of the differences between functional and object oriented programming:
+
+          Functional Programming                                    Object Oriented Programming
+          Definition: focuses on function evaluation                Definition: focuses on the concept of objects
+          Data: uses immutable data                                 Date: uses the mutable data
+          Model: Follows a declarative programming model            Model: Follows an imperative programming model
+          Support: Supports parallel programming                    Support: Does not support parallel programming
+          Execution: Statements can be excluded in any order        Execution: Statements executed in particular order
+          Iteration: Uses recursion                                 Iteration: Uses loops
+          Basic element: Functions & variables                      Basic element: Objects & methods
+
+      Some of the advantages of object-oriented programming include:
+
+          1. OOP languages can offer improved software-development productivity because they are:
           
-          let final = {
-            "Home": 0,
-            "Away": 0
-          }
-          for (let inn = 0; inn < innings; inn++) {
-            final.Home += inning();
-            final.Away += inning();
+              a. Modular. They povide separation of duties in object-based program development.
+                  Part of the system can be updated in case of issues without a need to make large-scale changes.
 
-            getInningScore(inn, final);
-          }
-          return final
+              b. Extensible. Objects can be extended to include new attributes and behaviors.
 
-          console.log(finalScore(inning, 9));
-        }
+              c. Reusable. OOP languages provide rich object libraries and reusable code resources.
+                  Objects can be reused within and across applications. This provides faster development processes.
+                  The reuse of software also lowers development cost.
 
-        function newScoreBoard(inning, final) {
-          if (inning === 0) {
-            console.log(
-                (inning + 1) + "st inning: " + final.Away + " - " + final.Home
-            );
-          }
-          else if (inning === 1) {
-            console.log(
-                (inning + 1) + "nd inning: " + final.Away + " - " + final.Home
-            );
-          }
-          else if (inning === 2) {
-            console.log(
-                (inning + 1) + "rd inning: " + final.Away + " - " + final.Home
-            );
-          }
-          else {
-            console.log(
-                (inning + 1) + "th inning: " + final.Away + " - " + final.Home
-            );
-          }
-        };
-        scoreboard(newScoreBoard, inning, 9);
+          2. OOP languages also provide improved software maintainability because of the reasons presented above.
+
+          4. Typically, OOP analysis and design is frontloaded with more time and effort, which lowers the overall
+          cost of development.
+
+          5. Faster development and lower development costs lead to higher quality software, allowing more time and
+          resources to be used in software verification. Although quality is usually dependent upon the experience of
+          the deveopment teams, object-oriented programming tends to result in higher-quality software even with less
+          experienced developers.
+          
+          
+      Some of the disadvantages of object-oriented programming include:
+          
+          1. Object-orinted programming (OOP) languages have a steep learning curve. The process of acquiring this
+          knowledge is not always natural. Thus, learning an OOP language and its key techiniques (such as inheritance,
+          polymorphism, closure, etc.) can be challenging and very time consuming for some people. 
+
+          2. OOP languages typically require more coding than procedural programs.
+
+          3. OOP programs sometimes run slower than functional programs that are procedure based, because OOP programs
+          typically required more instructional executions.
+          
+          4. OOP programming may not suit all problem solutions. For example, some problems are more suited to functional-
+          programming style, logic-programming style, or procedure-based programming style. Thus, applying an OOP languge 
+          in those situations is not efficient. 
+
+      Some of the pros of functional programming are:
+
+          1. If you implement dry, clean, transparent functions, you can achieve reliable results and avoid unwanted side
+          effects. Your code can perform exactly the way you intended it.
+          
+          2. Functional programming implements a declarative style. It focuses primarily on what needs to be done as opposed
+          to how to do it. It emphasizes efficiency and optimisation.
+
+      Some of the cons of functional programming are: 
+      
+          1. It is a relatively new paradigm. Consequently, documentation or helpful information is sometimes difficult to
+          locate.
+          
+          2. Sometimes it may become illegible because of multiple large number of functions.
